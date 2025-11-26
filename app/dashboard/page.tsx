@@ -20,7 +20,7 @@ async function getData(userId:String) {
 export default async function DashboardRoute() {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
-    const data = await getData(user!.id);
+    const data = await getData(user?.id as string);
     return (
         <div>
             <div className="flex items-center justify-between mb-4">
@@ -29,7 +29,7 @@ export default async function DashboardRoute() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {data!.map((item) => (
+            {data.map((item) => (
                 <BlogPostCard data={item} key={item.id} />
             ))}
             </div>
