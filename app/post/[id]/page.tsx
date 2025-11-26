@@ -3,9 +3,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import prisma from "@/app/utils/db";
 
 async function getData(id:string) {
-    const data = await prisma?.blogpost.findUnique({
+    const data = await prisma.blogpost.findUnique({
         where: {
             id: id as string,
         }
