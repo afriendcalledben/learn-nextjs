@@ -1,8 +1,4 @@
-import { get } from "http";
-import Image from "next/image";
-import Link from 'next/link';
 import prisma from "./utils/db";
-import { PrismaClient } from "@/generated/prisma/client";
 import { BlogPostCard } from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -13,10 +9,12 @@ async function getData() {
       title:true,
       content:true,
       imageUrl:true,
+      authorId:true,
       authorImage:true,
       authorName:true,
       id:true,
       createdAt:true,
+      updatedAt:true,
     }
   });
 

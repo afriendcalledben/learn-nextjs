@@ -3,13 +3,13 @@ import Link from "next/link";
 
 interface IappProps {
     data: {
-        id:string,
-        title:string,
-        content:string,
-        imageUrl:string,
-        authorId:string,
-        authorImage:string,
-        authorName:string,
+        id:String,
+        title:String,
+        content:String,
+        imageUrl:String,
+        authorId:String,
+        authorImage:String,
+        authorName:String,
         createdAt:Date,
         updatedAt:Date,
     }
