@@ -2,6 +2,7 @@ import { get } from "http";
 import Image from "next/image";
 import Link from 'next/link';
 import prisma from "./utils/db";
+import { PrismaClient } from "@/generated/prisma/client";
 import { BlogPostCard } from "@/components/general/BlogPostCard";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -23,7 +24,6 @@ async function getData() {
 }
 
 export default async function Home() {
-  const data = await getData();
   return (
     <div className="py-6">
       <h1 className="text-3xl font-bold tracking-tight mb-8">Latest Posts</h1>
